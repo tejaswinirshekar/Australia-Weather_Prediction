@@ -1,0 +1,4 @@
+venv/
+.venv/
+Australia_Weather_Prediction.egg-info/
+logs/
