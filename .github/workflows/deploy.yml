@@ -42,3 +42,8 @@ jobs:
             - name: GKE Configurations
               run: |
                 gcloud container clusters get-credentials $GKE_CLUSTER --region $GKE_REGION --project $PROJECT_ID
+
+            - name: Deploying to Kubernetes
+              run: |
+                kubectl apply -f kubernetes-deployment.yaml
+                kubectl set image deployment/$DEPLOYMENT_NAME $DEPLOYMENT_NAME = $IMAGE:$GITHUB_SHA
